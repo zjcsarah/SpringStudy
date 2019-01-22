@@ -35,7 +35,7 @@
             <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
         <!-- Ribbon相关 ↑-->
-        <!-- 修改后立即生效，热部署 -->
+        <!-- 修改后立即生效，热部署 ↓-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>springloaded</artifactId>
@@ -44,5 +44,18 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
         </dependency>
+        <!-- 修改后立即生效，热部署 ↑-->
+        <!-- swagger2 ↓-->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.6.1</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.6.1</version>
+        </dependency>
+        <!-- swagger2 ↑-->
     </dependencies>
 </project>

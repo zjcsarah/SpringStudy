@@ -1,8 +1,10 @@
 package cn.sysq.springcloud;
 
+import cn.sysq.myrule.MyRule;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.ribbon.RibbonClient;
 
 /**
  * @author linjingze
@@ -10,6 +12,8 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  */
 @SpringBootApplication
 @EnableEurekaClient
+// MyRule 这个自定义的类不能放在@ComponentScan 所在的同包或子包下
+@RibbonClient(name = "SPRINGCLOUD-DEPT", configuration = MyRule.class)
 public class DeptConsumer80_App {
 
 

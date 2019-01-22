@@ -1,6 +1,9 @@
 package cn.sysq.springcloud.controller;
 
 import cn.sysq.springcloud.pojo.Dept;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
@@ -28,15 +31,26 @@ public class DeptController_Consumer {
      */
     @Autowired
     private RestTemplate restTemplate;
-
+    @ApiOperation(value="根据id查询部门信息", notes="根据url的id来查询部门信息")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "id", value = "部门ID", required = true, dataType = "Long",paramType = "path"),
+    })
     @GetMapping("/info/{id}")
     public Dept info(@PathVariable(value = "id") Long id){
         return restTemplate.getForObject(RESTPRE + "/dept/info/" + id, Dept.class);
     }
+
+
+
+    @ApiOperation(value="新增部门", notes="新增部门")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "dept", value = "部门实体", required = true, dataType = "Dept")
+    })
     @PostMapping("/add")
     public boolean add(@RequestBody Dept dept){
         return restTemplate.postForObject(RESTPRE + "/dept/add", dept, Boolean.class);
     }
+    @ApiOperation(value="获取部门集合", notes="获取部门集合")
     @GetMapping("/list")
     public List<Dept> list(){
         return restTemplate.getForObject(RESTPRE + "/dept/list", List.class);

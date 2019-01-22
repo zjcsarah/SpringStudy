@@ -4,6 +4,7 @@ import cn.sysq.springcloud.pojo.Dept;
 import cn.sysq.springcloud.service.DeptService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
@@ -21,6 +22,7 @@ public class DeptController {
 
     @Autowired
     private DeptService deptService;
+    @Qualifier("discoveryClient")
     @Autowired
     private DiscoveryClient client;
 
