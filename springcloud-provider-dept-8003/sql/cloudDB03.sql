@@ -5,7 +5,7 @@
  Source Server Type    : MySQL
  Source Server Version : 50721
  Source Host           : localhost
- Source Database       : cloudDB01
+ Source Database       : clouddb03
 
  Target Server Type    : MySQL
  Target Server Version : 50721
@@ -32,7 +32,7 @@ CREATE TABLE `dept` (
 --  Records of `dept`
 -- ----------------------------
 BEGIN;
-INSERT INTO `dept` VALUES ('1', '技术部', 'clouddb01'), ('2', '营销部', 'clouddb01'), ('3', '人事部', 'clouddb01'), ('4', '市场部', 'clouddb01'), ('5', '财务部', 'clouddb01'), ('6', 'demoData', 'clouddb01');
+INSERT INTO `dept` VALUES ('1', '技术部', 'clouddb03'), ('2', '营销部', 'clouddb03'), ('3', '人事部', 'clouddb03'), ('4', '市场部', 'clouddb03'), ('5', '财务部', 'clouddb03'), ('6', 'demoData', 'clouddb03');
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;
