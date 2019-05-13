@@ -1,6 +1,6 @@
 server:
   port: 9527
-#1
+#12
 spring:
   application:
     name: springcloud-zuul-gateway
